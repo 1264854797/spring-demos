@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--    <bean id="hello" class="com.zhou.pojo.Hello">-->
+<!--        <property name="name" value="spring">-->
+<!--        </property>-->
+<!--    </bean>-->
+<!--    <bean id="student1" class="com.zhou.pojo.Student">-->
+<!--        <property name="name" value="小明"/>-->
+<!--    </bean>-->
+
+    <bean id="addr" class="com.zhou.pojo.Address">
+        <property name="address" value="重庆"></property>
+    </bean>
+    <bean id="student2" class="com.zhou.pojo.Student">
+        <property name="name" value="小明"></property>
+<!--    bean注入or注入bean-->
+        <property name="address" ref="addr"></property>
+<!--        数组注入-->
+        <property name="books">
+            <array>
+                <value>上海</value>
+                <value>杭州</value>
+                <value>深圳</value>
+            </array>
+        </property>
+<!--        list注入-->
+        <property name="hobbys">
+            <list>
+                <value>健身</value>
+                <value>学习</value>
+                <value>睡觉</value>
+            </list>
+        </property>
+<!--        map注入-->
+        <property name="card">
+            <map>
+                <entry key="中国民生银行" value="250250250250"></entry>
+                <entry key="中国建设银行" value="110110110110"></entry>
+            </map>
+        </property>
+<!--        set注入-->
+        <property name="games">
+            <set>
+                <value>111</value>
+                <value>222</value>
+                <value>333</value>
+            </set>
+        </property>
+<!--        null注入-->
+        <property name="wife" value="null"></property>
+<!--        properties注入-->
+        <property name="info">
+            <props>
+                <prop key="学号">123</prop>
+                <prop key="性别">男</prop>
+                <prop key="姓名">小周</prop>
+            </props>
+        </property>
+    </bean>
+<!--    p命名空间-->
+    <bean id="pname" class="com.zhou.pojo.Hello" p:name="p命名空间">
+    </bean>
+<!--    c命名空间-->
+    <bean id="cname" class="com.zhou.pojo.Hello" p:name="c命名空间">
+    </bean>
+
+</beans>

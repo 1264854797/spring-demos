@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="cat" class="com.zhou.pojo.Cat"></bean>
+    <bean id="cat2" class="com.zhou.pojo.Cat"></bean>
+
+    <bean id="dog" class="com.zhou.pojo.Dog"></bean>
+
+<!--    <bean id="User" class="com.zhou.pojo.User">-->
+<!--        <property name="cat" ref="Cat"></property>-->
+<!--        <property name="dog" ref="Dog"></property>-->
+<!--        <property name="str" value="主人"></property>-->
+<!--    </bean>-->
+
+    <!-- 当一个Bean中有autowire="byName" 时   -->
+<!--    <bean id="User" class="com.zhou.pojo.User" autowire="byType">-->
+<!--        <property name="str" value="托尼"></property>-->
+<!--    </bean>-->
+    <!--开启注解支持-->
+    <context:annotation-config/>
+
+    <bean id="user" class="com.zhou.pojo.User"/>
+</beans>

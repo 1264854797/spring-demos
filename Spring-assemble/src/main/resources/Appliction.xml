@@ -6,23 +6,23 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-    <bean id="cat" class="com.zhou.pojo.Cat"></bean>
-    <bean id="cat2" class="com.zhou.pojo.Cat"></bean>
-
-    <bean id="dog" class="com.zhou.pojo.Dog"></bean>
-
-<!--    <bean id="User" class="com.zhou.pojo.User">-->
-<!--        <property name="cat" ref="Cat"></property>-->
-<!--        <property name="dog" ref="Dog"></property>-->
-<!--        <property name="str" value="主人"></property>-->
-<!--    </bean>-->
-
-    <!-- 当一个Bean中有autowire="byName" 时   -->
-<!--    <bean id="User" class="com.zhou.pojo.User" autowire="byType">-->
-<!--        <property name="str" value="托尼"></property>-->
-<!--    </bean>-->
     <!--开启注解支持-->
     <context:annotation-config/>
+    <!--扫描类上的注解例如：@Controller @Repository @Service-->
+    <context:component-scan base-package="com.zhou"/>
 
-    <bean id="user" class="com.zhou.pojo.User"/>
+    <!--    <bean id="User" class="com.zhou.pojo.User">-->
+    <!--        <property name="cat" ref="Cat"></property>-->
+    <!--        <property name="dog" ref="Dog"></property>-->
+    <!--        <property name="str" value="主人"></property>-->
+    <!--    </bean>-->
+
+    <!-- 当一个Bean中有autowire="byName" 时   -->
+    <!--    <bean id="User" class="com.zhou.pojo.User" autowire="byType">-->
+    <!--        <property name="str" value="托尼"></property>-->
+    <!--    </bean>-->
+
+<!--    <bean id="cat" class="com.zhou.pojo.Cat"></bean>-->
+<!--    <bean id="dog" class="com.zhou.pojo.Dog"></bean>-->
+<!--    <bean id="user" class="com.zhou.pojo.User"/>-->
 </beans>

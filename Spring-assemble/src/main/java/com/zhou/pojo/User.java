@@ -2,16 +2,25 @@ package com.zhou.pojo;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
-
+/**
+ * 相当于配置文件中 <bean id="user" class="当前注解的类"/>
+ */
+@Component("user")
 public class User {
-    @Resource(name = "cat2")
+    @Resource
     private Cat cat;
-    @Autowired
-    private Dog dog;
+    @Resource
+    private Dog dog1;
 
+    /**
+     * 相当于配置文件中 <property name="str" value="小周"/>
+      */
+    @Value("小周")
     private String str;
 
     public Cat getCat() {
@@ -23,7 +32,7 @@ public class User {
 //    }
 
     public Dog getDog() {
-        return dog;
+        return dog1;
     }
 
 //    public void setDog(Dog dog) {
@@ -38,7 +47,7 @@ public class User {
 //        this.str = str;
 //    }
 
-    public void show(){
-        System.out.println("主人是"+str);
+    public void show() {
+        System.out.println("主人是" + str);
     }
 }

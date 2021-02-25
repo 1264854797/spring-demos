@@ -1,5 +1,6 @@
 import com.zhou.config.MyConfig;
 import com.zhou.controller.UserController;
+import com.zhou.pojo.Cats;
 import com.zhou.pojo.Dog;
 import com.zhou.pojo.Dogs;
 import com.zhou.pojo.User;
@@ -31,7 +32,9 @@ public class TestMain {
         ApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext(MyConfig.class);
         Dogs dogs = (Dogs) applicationContext.getBean("dogs");
+        Cats cats = (Cats) applicationContext.getBean("cats");
         System.out.println(dogs.name);
+        System.out.println(cats.name);
     }
 
 }
